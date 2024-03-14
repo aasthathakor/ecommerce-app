@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
       <body className={clsx(inter.className, "h-screen ")}>
         <div className="mobile-frame w-[400px] h-screen overflow-x-hidden overflow-y-auto">
           {children}
-          <Header />
+          
         </div>
       </body>
     </html>
