@@ -4,7 +4,7 @@ import { IoIosArrowBack } from "react-icons/io";
 import { useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
 import { FaLongArrowAltRight } from "react-icons/fa";
-import { FcFactory, FcGoogle } from "react-icons/fc";
+import { FcGoogle } from "react-icons/fc";
 import { ImFacebook2 } from "react-icons/im";
 import axios from "axios";
 import { useRouter } from "next/navigation";
@@ -19,16 +19,15 @@ const page = () => {
   const router = useRouter();
 
   const onSubmit = async (data) => {
-    
     try {
       const response = await axios.post(
-        "https://cf38-2405-201-2006-7d89-4136-c88f-ed9f-fdcd.ngrok-free.app/user-add",
+        `${process.env.NEXT_PUBLIC_NGROK_LINK}/user-add`,
         data
       );
-        console.log(response)
-        if(response){
-            router.push("/")
-        }
+      console.log(response);
+      if (response) {
+        router.push("/");
+      }
 
       console.log("Sign up successful");
     } catch (error) {

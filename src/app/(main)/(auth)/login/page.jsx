@@ -9,6 +9,7 @@ import { ImFacebook2 } from "react-icons/im";
 import { useRouter } from "next/navigation";
 import axios from "axios";
 
+
 const page = () => {
   const {
     register,
@@ -19,9 +20,10 @@ const page = () => {
   const router = useRouter();
 
   const onSubmit = async (data) => {
+    data.email = data.email.toLowerCase();
     try {
       const response = await axios.post(
-        "https://cf38-2405-201-2006-7d89-4136-c88f-ed9f-fdcd.ngrok-free.app/login-user",
+        `${process.env.NEXT_PUBLIC_NGROK_LINK}/login-user`,
         data
       );
       console.log(response);

@@ -1,6 +1,7 @@
 "use client";
 import axios from "axios";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const Category = () => {
@@ -10,9 +11,9 @@ const Category = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://cf38-2405-201-2006-7d89-4136-c88f-ed9f-fdcd.ngrok-free.app/category"
+          `${process.env.NEXT_PUBLIC_NGROK_LINK}/category`
         );
-        console.log(response)  
+        console.log(response);
         setCategories(response.data.data);
       } catch (error) {
         console.log(error);
@@ -20,29 +21,31 @@ const Category = () => {
     };
 
     fetchData();
-  },[]);
+  }, []);
 
-  useEffect(() => {
-    // console.log(categories);
-  }, [categories]);
+  useEffect(() => {}, [categories]);
 
   return (
     <div className="mt-[16px] divide-y">
       {categories &&
         categories.map((category) => (
-          <div key={category.id} className="flex w-full h-[100px]">
+          
+            <Link href="/shop/catalog">
+              <div key={category.id} className="flex w-full h-[100px]">
             <h1 className="text-[18px] leading-[22px] font-bold py-[16px] w-full flex flex-col pl-[24px] justify-center">
               {category.name}
             </h1>
 
             <Image
-              src={`https://cf38-2405-201-2006-7d89-4136-c88f-ed9f-fdcd.ngrok-free.app/${category.image}`}
+              src={`${process.env.NEXT_PUBLIC_NGROK_LINK}${category.image}`}
               alt={category.name}
               width={400}
               height={100}
               className="w- h-full object-cover"
             />
-          </div>
+             </div>
+            </Link>
+         
         ))}
     </div>
   );
