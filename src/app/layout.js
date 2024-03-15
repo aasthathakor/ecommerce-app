@@ -1,4 +1,3 @@
-import Header from "@/components/Header";
 import "./globals.css";
 import clsx from "clsx";
 import { Inter } from "next/font/google";
@@ -13,10 +12,14 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={clsx(inter.className, "h-screen ")}>
-        <div className="mobile-frame w-[400px] h-screen overflow-x-hidden overflow-y-auto">
+      <body
+        className={clsx(
+          inter.className,
+          "bg-black h-[100vh] md:overflow-hidden m-0 flex flex-col items-center justify-center p-0  "
+        )}
+      >
+        <div className="mobile-frame w-full md:w-full  bg-[rgb(243,245,247)] lg:w-[400px] h-screen overflow-x-hidden overflow-y-auto scrollbar">
           {children}
-          
         </div>
       </body>
     </html>

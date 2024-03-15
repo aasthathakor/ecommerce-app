@@ -7,19 +7,22 @@ import { MdOutlineShoppingCart } from "react-icons/md";
 import { HiOutlineShoppingBag } from "react-icons/hi";
 import { CiHeart } from "react-icons/ci";
 import { HiOutlineUserCircle } from "react-icons/hi2";
+import { Coming_Soon } from "next/font/google";
 
 const Header = () => {
-  const pathname = usePathname();
+  let pathname = usePathname();
+
+  pathname = pathname.split("/")[1];
 
   return (
-    <main className="absolute bottom-0 h-[83px]  px-[26px] pb-[20px] pt-2 border-none rounded-tr-[12px] rounded-tl-[12px] bg-[rgb(243,245,247)] overflow-x-hidden children">
-      <ul className="flex space-x-[45px]">
+    <main className="mt-screen sticky bottom-0 left-0   h-[83px]  px-[26px] pb-[20px] pt-2 border-none rounded-tr-[12px] rounded-tl-[12px] bg-[rgb(243,245,247)] overflow-x-hidden children flex flex-col items-center justify-centerng">
+      <ul className="flex items-center justify-center space-x-[30px] md:space-x-[45px]">
         <li>
           <Link
             href={"/"}
             className={clsx(
               "flex flex-col items-center justify-center",
-              pathname === "/"
+              pathname === ""
                 ? "text-[rgb(219,48,34)]"
                 : "text-[rgb(155,155,155)]"
             )}
@@ -41,7 +44,7 @@ const Header = () => {
             href={"/shop"}
             className={clsx(
               "flex flex-col items-center justify-center",
-              pathname === "/shop"
+              pathname === "shop"
                 ? "text-[rgb(219,48,34)]"
                 : "text-[rgb(155,155,155)]"
             )}
@@ -63,7 +66,7 @@ const Header = () => {
             href={"/bag"}
             className={clsx(
               "flex flex-col items-center justify-center",
-              pathname === "/bag"
+              pathname === "bag"
                 ? "text-[rgb(219,48,34)]"
                 : "text-[rgb(155,155,155)]"
             )}
@@ -85,7 +88,7 @@ const Header = () => {
             href={"/favorites"}
             className={clsx(
               "flex flex-col items-center justify-center",
-              pathname === "/favorites"
+              pathname === "favorites"
                 ? "text-[rgb(219,48,34)]"
                 : "text-[rgb(155,155,155)]"
             )}
@@ -107,7 +110,7 @@ const Header = () => {
             href={"/profile"}
             className={clsx(
               "flex flex-col items-center justify-center",
-              pathname === "/profile"
+              pathname === "profile"
                 ? "text-[rgb(219,48,34)]"
                 : "text-[rgb(155,155,155)]"
             )}

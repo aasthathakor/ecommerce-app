@@ -7,7 +7,7 @@ import Header from "@/components/Header";
 export default function Home() {
   return (
     <>
-      <main>
+      <main className="min;-h-[600px] mb-0 overflow-clip">
         <section className="relative">
           <Image
             src={Image1}
@@ -31,7 +31,7 @@ export default function Home() {
               <Image
                 src={ImageBlack}
                 alt=""
-                width={100}
+                width={186}
                 height={187}
                 className="h-[186px] w-full object-cover"
               />

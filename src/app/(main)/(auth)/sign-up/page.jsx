@@ -49,7 +49,7 @@ const page = () => {
       <section>
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="space-y-[20px] mt-[73px]"
+          className="space-y-[20px] mt-[60px]"
         >
           <div className="bg-[rgb(255,255,255)] px-[20px] py-[15px] rounded-[4px] h-[64px] ">
             <h1 className="text-[11px] leading-[11px] text-[rgb(155,155,155)] mb-1">

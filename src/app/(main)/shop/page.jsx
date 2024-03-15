@@ -18,7 +18,7 @@ const Page = () => {
 
   return (
     <>
-      <main className="">
+      <main className="min-h-[700px] overflow-y-auto">
         <section
           className={`px-[15px] pt-[8px] pb-[12px] shadow-md relative ${
             isSearchVisible ? "search-visible" : ""
@@ -57,11 +57,29 @@ const Page = () => {
           )}
         </section>
         <section className="px-[15px] mt-[21px] w-full">
-          <Tabs defaultValue="women" className="w-[370px]">
-            <TabsList className="w-full justify-between">
-              <TabsTrigger value="women">Women</TabsTrigger>
-              <TabsTrigger value="men">Men</TabsTrigger>
-              <TabsTrigger value="kids">Kids</TabsTrigger>
+          <Tabs
+            defaultValue="women"
+            className="w-full flex flex-col items-center justify-center"
+          >
+            <TabsList className="w-full flex  items-center  md:justify-between children space-x-[40px]">
+              <TabsTrigger
+                className="data-[state=active]:border-b-[3px] data-[state=active]:border-[rgb(219,48,34)] "
+                value="women"
+              >
+                Women
+              </TabsTrigger>
+              <TabsTrigger
+                className="data-[state=active]:border-b-[3px] data-[state=active]:border-[rgb(219,48,34)] "
+                value="men"
+              >
+                Men
+              </TabsTrigger>
+              <TabsTrigger
+                className="data-[state=active]:border-b-[3px] data-[state=active]:border-[rgb(219,48,34)] "
+                value="kids"
+              >
+                Kids
+              </TabsTrigger>
             </TabsList>
             <TabsContent value="women">
               <Category />

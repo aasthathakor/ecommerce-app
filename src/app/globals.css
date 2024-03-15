@@ -2,22 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  margin: 0;
-  padding: 0;
-  background-color: black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  overflow: hidden; /* Prevent scrolling */
-}
-
-.mobile-frame {
-  background-color: white;
-  box-sizing: border-box;
-}
-
 .children {
   width: inherit;
 }
@@ -106,7 +90,6 @@ span {
   }
 }
 
-
 .main {
   transition: transform 0.3s ease-in-out;
 }
@@ -135,4 +118,8 @@ span {
 
 body.search-visible {
   overflow: hidden; /* Prevent scrolling when search bar is visible */
+}
+
+.scrollbar::-webkit-scrollbar {
+  display: none;
 }
