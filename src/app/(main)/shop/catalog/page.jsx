@@ -43,7 +43,7 @@ const page = () => {
           }`}
         >
           <section className="justify-between flex items-center">
-            <Link href="/">
+            <Link href="/shop">
               <IoIosArrowBack size={20} />
             </Link>
 
